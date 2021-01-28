@@ -41,6 +41,9 @@ var app = new Vue({
         this.todos.push(this.newTask);
         this.newTask = '';
       }
+    },
+    mod(index){
+      this.todos.splice(index,1,prompt('Inserisci la task modificata:'));
     }
   }
 });
