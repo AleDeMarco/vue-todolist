@@ -1,0 +1,103 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.container{
+  text-align: center;
+}
+
+img{
+  width: 30%;
+  margin: 30px 0;
+}
+
+.add-todo{
+  margin-bottom: 50px;
+}
+
+input{
+  margin-right: 20px;
+  padding: 10px 20px;
+  border-radius: 15px;
+  font-size: 20px;
+  border: 2px solid #001026;
+}
+
+input:focus{
+  outline: none;
+  border: 2px solid #1CE152;
+}
+
+button{
+  margin-left: 20px;
+  padding: 10px 20px;
+  border-radius: 15px;
+  color:#1CE152;
+  background-color: #001026;
+  font-size: 20px;
+}
+
+button:hover{
+  color: #001026;
+  background-color: #1CE152;
+}
+
+button:focus{
+  outline: none;
+}
+
+.row::after{
+  content: '';
+  display: table;
+  clear: both;
+}
+
+.half{
+  width: 50vw;
+  float: left;
+  text-align: center;
+}
+
+h2{
+  margin-bottom: 20px;
+}
+
+ul{
+  list-style: none;
+}
+
+li{
+  width: 60%;
+  padding: 10px;
+  background-color: lightgrey;
+  border-radius: 10px;
+  text-align: left;
+  display: block;
+  margin: 10px auto;
+  font-size: 20px;
+}
+
+h3{
+  background-color: rgba(255, 0, 0, 0.4);
+  border-radius: 10px;
+  padding: 10px;
+  width: 60%;
+  margin: 0 auto;
+}
+
+i{
+  float: right;
+  font-size: 20px;
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+h2>i{
+  float: none;
+}
+
+i:hover{
+  color: #1CE152;
+}

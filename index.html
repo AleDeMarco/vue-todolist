@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>ToDo list</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+</head>
+<body>
+  <div class="container" id="app">
+    <img src="https://www.boolean.careers/images/misc/logo.png" alt="Logo boolean">
+    <div class="add-todo">
+      <input type="text" placeholder="Inserisci una task" @keyup.enter="add" v-model="newTask">
+      <button type="button" @click="add">Inserisci</button>
+    </div>
+    <div class="row">
+      <div class="half">
+        <h2>Cose da fare:</h2>
+        <ul v-if="todos.length > 0">
+          <li v-for="(todo,index) in todos">
+            {{ todo }}
+            <i class="fas fa-check" @click="done(index)"></i>
+          </li>
+        </ul>
+        <h3 v-else>Ben fatto! Ora puoi goderti il tuo meritato riposo</h3>
+      </div>
+      <div class="half">
+        <h2><i class="far fa-trash-alt" @click="clearAll"></i> Cose fatte:</h2>
+        <ul v-if="deleted.length > 0">
+          <li v-for="(del,index) in deleted">
+            {{ del }}
+            <i class="far fa-trash-alt" @click="clear(index)"></i>
+            <i class="fas fa-times" @click="restore(index)"></i>
+          </li>
+        </ul>
+        <h3 v-else>Non hai ancora fatto niente! Cosa aspetti?</h3>
+      </div>
+    </div>
+  </div>
+  <script src="js/script.js" charset="utf-8"></script>
+</body>
+</html>
