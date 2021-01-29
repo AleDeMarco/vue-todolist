@@ -17,6 +17,13 @@ var app = new Vue({
       this.deleted.unshift(this.todos[index]);
       this.todos.splice(index,1);
     },
+    doneAll(index){
+      let x = confirm('Sei sicuro di aver completato tutti i task?');
+      while (x == true && this.todos.length > 0) {
+        this.deleted.unshift(this.todos[0]);
+        this.todos.shift();
+      }
+    },
     restore(index){
       this.todos.push(this.deleted[index]);
       this.deleted.splice(index,1);

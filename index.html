@@ -18,7 +18,7 @@
     </div>
     <div class="row">
       <div class="half">
-        <h2>Cose da fare:</h2>
+        <h2><i class="fas fa-check" @click="doneAll"></i> Cose da fare:</h2>
         <ul v-if="todos.length > 0">
           <li v-for="(todo,index) in todos">
             {{ todo }}
